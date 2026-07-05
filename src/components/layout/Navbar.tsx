@@ -7,6 +7,8 @@ import { CircleDot, Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
 
+const allLinks = [...navLinks, { href: "/blog", label: "Blog" }];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -22,7 +24,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
+          {allLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
@@ -53,7 +55,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="border-t border-[var(--border)] bg-[var(--background)] md:hidden">
           <ul className="flex flex-col gap-1 p-4">
-            {navLinks.map((link) => (
+            {allLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

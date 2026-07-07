@@ -130,6 +130,66 @@ export default function BlogPost({
         </section>
       )}
 
+      {/* ── Internal Linking: Related Tools ───────────────────────────── */}
+      <section className="mt-10 border-t border-[var(--border)] pt-8">
+        <h2 className="mb-4 text-xl font-semibold text-[var(--foreground)]">
+          Explore Our Divination Tools
+        </h2>
+        <p className="mb-5 text-sm text-[var(--muted-foreground)]">
+          Put ancient wisdom into practice — try our free AI-powered tools below.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/iching"
+            className="group flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--card)]/60 p-4 transition-all hover:border-[var(--color-primary)]/40"
+          >
+            <span className="text-2xl">☰</span>
+            <div>
+              <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--color-primary-light)] transition-colors">
+                I Ching Oracle
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)]">Cast a hexagram and receive guidance from the Book of Changes</p>
+            </div>
+          </Link>
+          <Link
+            href="/tarot"
+            className="group flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--card)]/60 p-4 transition-all hover:border-[var(--color-primary)]/40"
+          >
+            <span className="text-2xl">🂡</span>
+            <div>
+              <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--color-primary-light)] transition-colors">
+                AI Tarot Reading
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)]">Draw cards and get AI-interpreted Tarot insights</p>
+            </div>
+          </Link>
+          <Link
+            href="/horoscope"
+            className="group flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--card)]/60 p-4 transition-all hover:border-[var(--color-primary)]/40"
+          >
+            <span className="text-2xl">♈</span>
+            <div>
+              <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--color-primary-light)] transition-colors">
+                Daily Horoscope
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)]">Read today’s horoscope for your zodiac sign</p>
+            </div>
+          </Link>
+          <Link
+            href="/five-elements"
+            className="group flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--card)]/60 p-4 transition-all hover:border-[var(--color-primary)]/40"
+          >
+            <span className="text-2xl">☯</span>
+            <div>
+              <p className="text-sm font-medium text-[var(--foreground)] group-hover:text-[var(--color-primary-light)] transition-colors">
+                Five Elements Test
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)]">Discover your dominant element — Wood, Fire, Earth, Metal, or Water</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Back link */}
       <div className="mt-10 text-center">
         <Link

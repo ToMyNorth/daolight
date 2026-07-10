@@ -7,9 +7,8 @@ import { siteConfig } from "@/lib/siteConfig";
 import "./globals.css";
 
 // ── Google Search Console verification ────────────────────────────────────
-// Replace 'YOUR_GOOGLE_VERIFICATION_CODE' with the actual code from
-// Google Search Console → Settings → Ownership verification → HTML tag
-const GOOGLE_VERIFICATION = "YOUR_GOOGLE_VERIFICATION_CODE";
+// Verified via Google Search Console → Settings → Ownership verification → HTML tag
+const GOOGLE_VERIFICATION = "KhchUzf5OrG30xJvpTZtfsKmkHcTqyzvAIuhkZ107-k";
 
 // ── Google Analytics 4 Measurement ID ────────────────────────────────────
 // Replace 'G-XXXXXXXXXX' with your real GA4 Measurement ID from

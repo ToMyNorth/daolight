@@ -1,6 +1,6 @@
 # Dao Light SEO 运营操作指南
 
-> 本文档为 daolight.ai 的 SEO 平台配置与站外运营操作手册。
+> 本文档为 daolight.one 的 SEO 平台配置与站外运营操作手册。
 > 代码层面的 SEO 优化已由开发团队完成（动态 Sitemap、页面 Metadata、JSON-LD 结构化数据、安全 Headers、图片优化等）。
 > 本文档聚焦于需要手动操作的平台配置和长期运营策略。
 
@@ -19,7 +19,7 @@
 1. 访问 [Google Search Console](https://search.google.com/search-console)
 2. 点击左上角下拉菜单 → **Add property**
 3. 选择 **URL prefix** 方式（推荐）
-4. 输入 `https://daolight.ai`，点击 **Continue**
+4. 输入 `https://daolight.one`，点击 **Continue**
 5. 选择 **HTML tag** 验证方式 → 复制 Google 提供的 `<meta>` 标签中的 `content` 值
 6. 将 `src/app/layout.tsx` 中的 `YOUR_GOOGLE_VERIFICATION_CODE` 替换为实际值
 7. 重新部署到 Vercel
@@ -27,14 +27,14 @@
 
 #### 添加 GSC 属性完整步骤
 
-1. 验证成功后，**再添加一个属性**：`https://www.daolight.ai`（同样使用 URL prefix + HTML tag 方式）
-2. 如果部署在 Vercel 上，也可以添加 `https://daolight.vercel.app` 属性
+1. 验证成功后，**再添加一个属性**：`https://www.daolight.one`（同样使用 URL prefix + HTML tag 方式）
+2. 如果部署在 Vercel 上，也可以添加 `https://daolight.one` 属性
 
 > ⚠️ **重要**：需要添加两个属性（带 www 和不带 www），确保 Google 正确识别你的首选域名。如果未来设置了 www 到非 www 的 301 重定向，GSC 会自动将信号合并到首选域名。
 
 #### 设置首选域名
 
-- 在 GSC 中选择 `https://daolight.ai` 属性
+- 在 GSC 中选择 `https://daolight.one` 属性
 - 进入 **Settings** → **Change of Address**（如果后续需要迁移域名时使用）
 - 确保 Vercel 部署已配置 www → 非 www 的 301 重定向（在 Vercel Dashboard → Domains 中设置）
 
@@ -44,18 +44,18 @@
 
 | URL | 优先级 | 更新频率 |
 |-----|--------|---------|
-| `https://daolight.ai/` | 1.0 | 每周 |
-| `https://daolight.ai/iching` | 0.9 | 每周 |
-| `https://daolight.ai/tarot` | 0.9 | 每周 |
-| `https://daolight.ai/horoscope` | 0.8 | 每日 |
-| `https://daolight.ai/five-elements` | 0.8 | 每周 |
-| `https://daolight.ai/blog` | 0.8 | 每周 |
-| `https://daolight.ai/about` | 0.5 | 每月 |
-| `https://daolight.ai/pricing` | 0.4 | 每月 |
-| `https://daolight.ai/privacy` | 0.3 | 每年 |
-| `https://daolight.ai/terms` | 0.3 | 每年 |
-| `https://daolight.ai/horoscope/[sign]` × 12 | 0.7 | 每日 |
-| `https://daolight.ai/blog/[slug]` × 16+ | 0.6 | 每月 |
+| `https://daolight.one/` | 1.0 | 每周 |
+| `https://daolight.one/iching` | 0.9 | 每周 |
+| `https://daolight.one/tarot` | 0.9 | 每周 |
+| `https://daolight.one/horoscope` | 0.8 | 每日 |
+| `https://daolight.one/five-elements` | 0.8 | 每周 |
+| `https://daolight.one/blog` | 0.8 | 每周 |
+| `https://daolight.one/about` | 0.5 | 每月 |
+| `https://daolight.one/pricing` | 0.4 | 每月 |
+| `https://daolight.one/privacy` | 0.3 | 每年 |
+| `https://daolight.one/terms` | 0.3 | 每年 |
+| `https://daolight.one/horoscope/[sign]` × 12 | 0.7 | 每日 |
+| `https://daolight.one/blog/[slug]` × 16+ | 0.6 | 每月 |
 
 > 💡 **提示**：Sitemap 自动包含 12 个星座运势页和所有已发布的博客文章。新增博客文章时，只需在 `src/data/blogPosts.ts` 中添加数据，Sitemap 会自动更新。
 
@@ -71,23 +71,23 @@
 
 对每个重要页面手动请求索引，加速 Google 收录：
 
-1. 在 GSC 顶部搜索栏输入完整 URL（如 `https://daolight.ai/`）
+1. 在 GSC 顶部搜索栏输入完整 URL（如 `https://daolight.one/`）
 2. 按回车，等待 URL Inspection 结果
 3. 如果显示 "URL is not on Google"，点击 **Request Indexing**
 4. 每个 URL 每天可以请求索引一次
 
 **优先请求索引的页面（按顺序）：**
 
-- [ ] `https://daolight.ai/` — 首页（最重要）
-- [ ] `https://daolight.ai/iching` — I Ching 占卜页
-- [ ] `https://daolight.ai/tarot` — 塔罗牌页
-- [ ] `https://daolight.ai/horoscope` — 每日运势页
-- [ ] `https://daolight.ai/five-elements` — 五行测试页
-- [ ] `https://daolight.ai/blog` — 博客列表页
-- [ ] `https://daolight.ai/pricing` — 定价页
+- [ ] `https://daolight.one/` — 首页（最重要）
+- [ ] `https://daolight.one/iching` — I Ching 占卜页
+- [ ] `https://daolight.one/tarot` — 塔罗牌页
+- [ ] `https://daolight.one/horoscope` — 每日运势页
+- [ ] `https://daolight.one/five-elements` — 五行测试页
+- [ ] `https://daolight.one/blog` — 博客列表页
+- [ ] `https://daolight.one/pricing` — 定价页
 - [ ] 各博客文章页（发布后逐一请求）
 
-> 💡 通常提交后 1-2 周内会被索引。可以通过 `site:daolight.ai` 在 Google 搜索中验证收录情况。
+> 💡 通常提交后 1-2 周内会被索引。可以通过 `site:daolight.one` 在 Google 搜索中验证收录情况。
 
 ### 1.4 日常监控 Checklist
 
@@ -133,7 +133,7 @@
 - ✅ About 页面已完成
 - ⏳ 待操作：GSC 属性验证（需填入 verification code）+ Sitemap 提交 + 手动请求索引
 - ⏳ 待开发：Contact 页面
-- 📊 预期：提交后 1-2 周内可在 `site:daolight.ai` 看到首批收录结果
+- 📊 预期：提交后 1-2 周内可在 `site:daolight.one` 看到首批收录结果
 
 #### 🔴 高优先级行动
 
@@ -163,7 +163,7 @@
 5. 点击 **Next** → 选择行业 `Entertainment` → 点击 **Next**
 6. 选择 Business objectives → 点击 **Create**
 7. 创建 Data Stream：选择 **Web**
-   - Website URL: `https://daolight.ai`
+   - Website URL: `https://daolight.one`
    - Stream name: `Dao Light Web`
    - 开启 **Enhanced measurement**（自动追踪页面浏览、滚动、外链点击等）
 8. 记录 **Measurement ID**（格式为 `G-XXXXXXXXXX`）
@@ -203,7 +203,7 @@
 关联后，可以在 GA4 中直接查看 Google 搜索数据（搜索词、展示量、点击量）：
 
 1. GA4 → **Admin** → **Product Links** → **Search Console Links**
-2. 点击 **Link** → 选择你已验证的 GSC 属性 `daolight.ai`
+2. 点击 **Link** → 选择你已验证的 GSC 属性 `daolight.one`
 3. 选择要共享的 Search Console 数据视图
 4. 确认关联
 
@@ -315,7 +315,7 @@ track('Reading Completed', { type: 'iching', method: 'coin' })
 #### Twitter/X
 
 - **账号名**：`@daolight_app` 或 `@daolight_ai`
-- **Bio**：`Ancient Eastern Wisdom, Powered by AI 🏮 I Ching • Tarot • Horoscope • Five Elements. Try it free → daolight.ai`
+- **Bio**：`Ancient Eastern Wisdom, Powered by AI 🏮 I Ching • Tarot • Horoscope • Five Elements. Try it free → daolight.one`
 - **内容方向**：
   - 每日运势/卦象分享（每日 1 条）：*"Today's I Ching hexagram: ䷀ The Creative (乾). A powerful day for new beginnings. What will you create today?"*
   - 东方智慧名言（每周 2 条）：老子、孔子、孙子名言 + AI 解读
@@ -343,7 +343,7 @@ track('Reading Completed', { type: 'iching', method: 'coin' })
 #### Pinterest（新增平台，对 spiritual/wellness 内容极其友好）
 
 - **账号类型**：Pinterest Business（免费）
-- **Bio**：`Ancient Eastern Wisdom, Powered by AI 🏮 I Ching • Tarot • Horoscope • Five Elements | daolight.ai`
+- **Bio**：`Ancient Eastern Wisdom, Powered by AI 🏮 I Ching • Tarot • Horoscope • Five Elements | daolight.one`
 - **Boards**：
   - "I Ching Hexagrams" — 64 卦详解图
   - "Tarot Meanings" — 78 张塔罗牌含义
@@ -378,7 +378,7 @@ track('Reading Completed', { type: 'iching', method: 'coin' })
   - 每日运势卡片分享
   - 用户反馈/体验分享
   - 东方智慧小知识（五行相生相克、卦象小故事）
-- **Bio 链接**：使用 Linktree 或直链到 daolight.ai
+- **Bio 链接**：使用 Linktree 或直链到 daolight.one
 - **Hashtags**：`#iching` `#tarotreading` `#horoscope` `#spirituality` `#mindfulness` `#divination` `#chineseastrology`
 - **频率**：每周 3-5 条短视频
 
@@ -417,7 +417,7 @@ track('Reading Completed', { type: 'iching', method: 'coin' })
 #### Hacker News
 
 - 发布标题：*"Show HN: I built an AI tool for I Ching divination, Tarot, and Chinese astrology"*
-- URL: `https://daolight.ai`
+- URL: `https://daolight.one`
 - 准备一篇技术博客文章（如 "Building an AI Divination Tool with Next.js and OpenAI"），在 HN 评论区链接
 - 在评论中积极回答技术问题（HN 用户关注实现细节）
 - 发布时间：**Pacific Time 上午 8-10 点，周二至周四**
@@ -530,7 +530,7 @@ AI 工具目录是近年来新兴的高权重流量入口。用户通过 "AI for
 2. 点击页面右上角 **"Submit a Tool"** 或 **"Add Your Tool"**
 3. 填写以下信息：
    - **Tool Name**: Dao Light
-   - **Tool URL**: https://daolight.ai
+   - **Tool URL**: https://daolight.one
    - **Short Description**: AI-powered Chinese divination & fortune telling — I Ching, Tarot, Horoscope, Five Elements
    - **Long Description**: Dao Light combines ancient Eastern wisdom with modern AI technology. Get personalized I Ching readings, AI-interpreted Tarot cards, daily horoscopes based on Chinese astrology, and Five Elements personality tests. All powered by GPT-4o for deep, insightful guidance. Free to try.
    - **Category**: Spirituality / Wellness / Personal Development
@@ -700,7 +700,7 @@ KGR = allintitle 搜索结果数 / 月搜索量（搜索量须 < 250）
 
 1. 访问 [adsense.google.com](https://adsense.google.com)
 2. 使用 Google 账号登录
-3. 点击 **Get started** → 添加网站 URL: `daolight.ai`
+3. 点击 **Get started** → 添加网站 URL: `daolight.one`
 4. 选择国家/地区，同意条款
 5. Google 会提供一段 AdSense 代码片段
 6. 将代码添加到项目中：

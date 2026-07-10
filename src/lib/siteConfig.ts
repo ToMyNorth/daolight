@@ -3,7 +3,7 @@
 export const siteConfig = {
   name: "Dao Light",
   shortName: "DaoLight",
-  url: "https://daolight.ai",
+  url: "https://daolight.one",
   title: "Dao Light - Ancient Eastern Wisdom, Powered by AI",
   description:
     "Discover I Ching divination, AI Tarot readings, daily horoscopes and Five Elements personality insights. Ancient Eastern wisdom meets modern AI technology.",

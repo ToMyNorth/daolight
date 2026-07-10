@@ -47,7 +47,7 @@ export default function TermsPage() {
                 By accessing or using the Dao Light website and services
                 (collectively, the &quot;Service&quot;) at{" "}
                 <Link href="/" className="text-[var(--color-primary)] hover:underline">
-                  daolight.ai
+                  daolight.one
                 </Link>
                 , you agree to be bound by these Terms of Service
                 (&quot;Terms&quot;). If you do not agree to these Terms, please
@@ -269,10 +269,10 @@ export default function TermsPage() {
                 <p className="mt-1">
                   Email:{" "}
                   <a
-                    href="mailto:legal@daolight.ai"
+                    href="mailto:legal@daolight.one"
                     className="text-[var(--color-primary)] hover:underline"
                   >
-                    legal@daolight.ai
+                    legal@daolight.one
                   </a>
                 </p>
               </div>

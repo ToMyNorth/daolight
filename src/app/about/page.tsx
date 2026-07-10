@@ -169,10 +169,10 @@ export default function AboutPage() {
               feedback, or collaboration ideas.
             </p>
             <a
-              href="mailto:hello@daolight.ai"
+              href="mailto:hello@daolight.one"
               className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
             >
-              hello@daolight.ai
+              hello@daolight.one
             </a>
           </div>
         </div>

@@ -76,7 +76,7 @@ const svg = Buffer.from(`
   <rect x="0" y="570" width="1200" height="60" fill="#0f172a" fill-opacity="0.7"/>
   <text x="600" y="608" text-anchor="middle"
         font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="500"
-        fill="#64748b">daolight.ai</text>
+        fill="#64748b">daolight.one</text>
 </svg>
 `);
 

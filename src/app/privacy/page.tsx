@@ -31,7 +31,7 @@ export default function PrivacyPage() {
               how we collect, use, disclose, and safeguard your information when
               you visit our website at{" "}
               <Link href="/" className="text-[var(--color-primary)] hover:underline">
-                daolight.ai
+                daolight.one
               </Link>
               . Please read this policy carefully. By accessing or using the
               Service, you agree to the collection and use of information in
@@ -229,10 +229,10 @@ export default function PrivacyPage() {
               <p className="mt-4 leading-relaxed">
                 To exercise any of these rights, please contact us at{" "}
                 <a
-                  href="mailto:privacy@daolight.ai"
+                  href="mailto:privacy@daolight.one"
                   className="text-[var(--color-primary)] hover:underline"
                 >
-                  privacy@daolight.ai
+                  privacy@daolight.one
                 </a>
                 . We will respond to your request within 30 days.
               </p>
@@ -334,10 +334,10 @@ export default function PrivacyPage() {
                 information promptly. If you believe we have collected
                 information from a child under 13, please contact us at{" "}
                 <a
-                  href="mailto:privacy@daolight.ai"
+                  href="mailto:privacy@daolight.one"
                   className="text-[var(--color-primary)] hover:underline"
                 >
-                  privacy@daolight.ai
+                  privacy@daolight.one
                 </a>
                 .
               </p>
@@ -374,10 +374,10 @@ export default function PrivacyPage() {
                 <p className="mt-1">
                   Email:{" "}
                   <a
-                    href="mailto:privacy@daolight.ai"
+                    href="mailto:privacy@daolight.one"
                     className="text-[var(--color-primary)] hover:underline"
                   >
-                    privacy@daolight.ai
+                    privacy@daolight.one
                   </a>
                 </p>
               </div>

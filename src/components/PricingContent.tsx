@@ -1,85 +1,104 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
+/* ── Plan definitions ─────────────────────────────────────────────── */
 const plans = [
   {
     name: "Free",
     price: "$0",
-    period: "/mo",
-    description: "Perfect for curious explorers",
+    period: "",
+    description: "Get a taste of ancient wisdom every day",
+    badge: null,
     features: [
-      "Daily horoscope",
-      "1 I Ching reading per day",
-      "1 Tarot reading per day",
+      "3 divination readings per day",
+      "Daily horoscope for all 12 zodiac signs",
       "Five Elements personality test",
+      "Basic AI interpretations",
     ],
-    cta: "Start Exploring",
+    cta: "Start Free",
     href: "/iching",
-    highlight: true,
-    active: true,
+    highlight: false,
   },
   {
-    name: "Seeker",
+    name: "Pro",
     price: "$9.99",
     period: "/mo",
-    description: "For dedicated seekers of wisdom",
+    description: "Unlimited access for dedicated seekers",
+    badge: "Most Popular",
     features: [
-      "Unlimited readings",
-      "AI Oracle Chat",
-      "Personalized daily insights",
+      "Unlimited divination readings",
+      "AI Oracle Chat with deep analysis",
+      "Personalized daily insights & alerts",
       "Shareable reading cards",
-    ],
-    cta: "Coming Soon",
-    href: null,
-    highlight: false,
-    active: false,
-  },
-  {
-    name: "Sage",
-    price: "$19.99",
-    period: "/mo",
-    description: "The ultimate wisdom experience",
-    features: [
-      "Everything in Seeker",
-      "Deep analysis reports",
       "Soulmate compatibility readings",
       "Priority AI responses",
     ],
-    cta: "Coming Soon",
-    href: null,
+    cta: "Upgrade to Pro",
+    href: "/iching",
+    highlight: true,
+  },
+  {
+    name: "Lifetime",
+    price: "$49.99",
+    period: " once",
+    description: "Pay once, access forever — best value",
+    badge: "Best Value",
+    features: [
+      "Everything in Pro — forever",
+      "Lifetime free upgrades",
+      "Exclusive seasonal reading packs",
+      "Early access to new features",
+      "Premium support",
+      "No recurring charges",
+    ],
+    cta: "Get Lifetime Access",
+    href: "/iching",
     highlight: false,
-    active: false,
   },
 ];
 
+/* ── Feature comparison rows ──────────────────────────────────────── */
+const comparison = [
+  { feature: "Daily readings", free: "3 / day", pro: "Unlimited", lifetime: "Unlimited" },
+  { feature: "Daily horoscope", free: "✓", pro: "✓", lifetime: "✓" },
+  { feature: "Five Elements test", free: "✓", pro: "✓", lifetime: "✓" },
+  { feature: "AI interpretations", free: "Basic", pro: "Advanced", lifetime: "Advanced" },
+  { feature: "AI Oracle Chat", free: "—", pro: "✓", lifetime: "✓" },
+  { feature: "Personalized insights", free: "—", pro: "✓", lifetime: "✓" },
+  { feature: "Compatibility readings", free: "—", pro: "✓", lifetime: "✓" },
+  { feature: "Shareable cards", free: "—", pro: "✓", lifetime: "✓" },
+  { feature: "Priority AI responses", free: "—", pro: "✓", lifetime: "✓" },
+  { feature: "Seasonal reading packs", free: "—", pro: "—", lifetime: "✓" },
+  { feature: "Lifetime upgrades", free: "—", pro: "—", lifetime: "✓" },
+  { feature: "Premium support", free: "—", pro: "—", lifetime: "✓" },
+];
+
+/* ── FAQ data ─────────────────────────────────────────────────────── */
 const faqs = [
   {
-    q: "Is Dao Light really free?",
-    a: "Yes! All current features are completely free during our early access period. No credit card required.",
+    q: "Can I use Dao Light for free?",
+    a: "Yes! The Free plan gives you 3 divination readings per day plus access to daily horoscopes and the Five Elements personality test — no credit card required.",
   },
   {
-    q: "When will premium features launch?",
-    a: "We're working on it! Join our waitlist to be the first to know when premium features become available.",
+    q: "What's included in the Pro plan?",
+    a: "Pro unlocks unlimited readings, AI Oracle Chat with deep analysis, personalized daily insights, soulmate compatibility readings, shareable reading cards, and priority AI responses.",
   },
   {
-    q: "What payment methods will you accept?",
-    a: "We plan to accept major credit cards via Stripe or LemonSqueezy for secure, global payments.",
+    q: "How does the Lifetime plan work?",
+    a: "Pay a one-time fee of $49.99 and get full Pro features forever — including all future upgrades, exclusive seasonal reading packs, and premium support. No recurring charges.",
+  },
+  {
+    q: "What payment methods do you accept?",
+    a: "We accept major credit cards and global payment methods via secure payment processors. All transactions are encrypted and safe.",
+  },
+  {
+    q: "Can I cancel or get a refund?",
+    a: "Pro subscriptions can be cancelled at any time. Lifetime and Pro plans both come with a 7-day money-back guarantee — no questions asked.",
   },
 ];
 
 export default function PricingContent() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleWaitlist = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[var(--background)]">
       {/* Hero */}
@@ -90,23 +109,8 @@ export default function PricingContent() {
             Pricing
           </h1>
           <p className="text-lg text-[var(--muted-foreground)] sm:text-xl">
-            All features are currently free during our early access period
+            Choose the plan that fits your spiritual journey
           </p>
-        </div>
-      </section>
-
-      {/* Early Access Banner */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <div className="rounded-xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 p-6 text-center">
-            <p className="text-[var(--foreground)]">
-              <span className="font-semibold text-[var(--color-primary)]">
-                Dao Light is in early access.
-              </span>{" "}
-              All divination tools and readings are completely free. No account
-              required — just start exploring.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -119,34 +123,26 @@ export default function PricingContent() {
                 key={plan.name}
                 className={`relative rounded-2xl border p-6 transition-all sm:p-8 ${
                   plan.highlight
-                    ? "border-[var(--color-primary)] bg-[var(--card)] shadow-lg shadow-[var(--color-primary)]/10"
-                    : plan.active
-                      ? "border-[var(--border)] bg-[var(--card)]"
-                      : "border-dashed border-[var(--border)] bg-[var(--muted)]/30 opacity-75"
+                    ? "border-[var(--color-primary)] bg-[var(--card)] shadow-lg shadow-[var(--color-primary)]/10 scale-[1.02]"
+                    : "border-[var(--border)] bg-[var(--card)]"
                 }`}
               >
-                {!plan.active && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--muted)] px-4 py-1 text-xs font-semibold text-[var(--muted-foreground)]">
-                    Coming Soon
-                  </div>
-                )}
-
-                {plan.highlight && plan.active && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--color-primary)] px-4 py-1 text-xs font-semibold text-white">
-                    Free Now
+                {plan.badge && (
+                  <div className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-semibold text-white ${
+                    plan.highlight
+                      ? "bg-[var(--color-primary)]"
+                      : "bg-[var(--color-accent)]"
+                  }`}>
+                    {plan.badge}
                   </div>
                 )}
 
                 <div className="mb-6 text-center">
-                  <h3
-                    className={`mb-2 text-xl font-bold ${plan.active ? "text-[var(--foreground)]" : "text-[var(--muted-foreground)]"}`}
-                  >
+                  <h3 className="mb-2 text-xl font-bold text-[var(--foreground)]">
                     {plan.name}
                   </h3>
                   <div className="mb-2">
-                    <span
-                      className={`text-4xl font-bold ${plan.active ? "text-[var(--foreground)]" : "text-[var(--muted-foreground)]"}`}
-                    >
+                    <span className="text-4xl font-bold text-[var(--foreground)]">
                       {plan.price}
                     </span>
                     <span className="text-[var(--muted-foreground)]">
@@ -161,80 +157,79 @@ export default function PricingContent() {
                 <ul className="mb-8 space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm">
-                      <span
-                        className={`mt-0.5 text-base ${plan.active ? "text-[var(--color-primary)]" : "text-[var(--muted-foreground)]"}`}
-                      >
+                      <span className="mt-0.5 text-base text-[var(--color-primary)]">
                         ✓
                       </span>
-                      <span
-                        className={plan.active ? "text-[var(--foreground)]" : "text-[var(--muted-foreground)]"}
-                      >
-                        {feature}
-                      </span>
+                      <span className="text-[var(--foreground)]">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {plan.href ? (
-                  <Link
-                    href={plan.href}
-                    className="block w-full rounded-full bg-[var(--color-primary)] py-3 text-center font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
-                  >
-                    {plan.cta}
-                  </Link>
-                ) : (
-                  <button
-                    disabled
-                    className="block w-full cursor-not-allowed rounded-full border border-dashed border-[var(--border)] py-3 text-center font-semibold text-[var(--muted-foreground)]"
-                  >
-                    {plan.cta}
-                  </button>
-                )}
+                <Link
+                  href={plan.href}
+                  className={`block w-full rounded-full py-3 text-center font-semibold transition-colors ${
+                    plan.highlight
+                      ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)]"
+                      : "border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--muted)]"
+                  }`}
+                >
+                  {plan.cta}
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Waitlist */}
+      {/* Feature Comparison */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="mb-3 text-2xl font-bold text-[var(--foreground)]">
-            Join Our Waitlist
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-8 text-center text-2xl font-bold text-[var(--foreground)]">
+            Feature Comparison
           </h2>
-          <p className="mb-6 text-[var(--muted-foreground)]">
-            Be notified when premium features launch. No spam, ever.
-          </p>
-          {submitted ? (
-            <div className="rounded-xl border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 p-6">
-              <p className="text-lg font-semibold text-[var(--color-primary)]">
-                🎉 You&apos;re on the list!
-              </p>
-              <p className="mt-1 text-sm text-[var(--muted-foreground)]">
-                We&apos;ll let you know when premium features are ready.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleWaitlist}
-              className="flex flex-col gap-3 sm:flex-row"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                className="flex-1 rounded-full border border-[var(--border)] bg-[var(--card)] px-5 py-3 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-[var(--color-accent)] px-8 py-3 font-semibold text-white transition-colors hover:bg-[var(--color-accent-dark)]"
-              >
-                Join Waitlist
-              </button>
-            </form>
-          )}
+          <div className="overflow-x-auto rounded-2xl border border-[var(--border)]">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-[var(--border)] bg-[var(--muted)]/40">
+                  <th className="px-6 py-4 text-left font-semibold text-[var(--foreground)]">
+                    Feature
+                  </th>
+                  <th className="px-4 py-4 text-center font-semibold text-[var(--foreground)]">
+                    Free
+                  </th>
+                  <th className="px-4 py-4 text-center font-semibold text-[var(--color-primary)]">
+                    Pro
+                  </th>
+                  <th className="px-4 py-4 text-center font-semibold text-[var(--color-accent)]">
+                    Lifetime
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row, i) => (
+                  <tr
+                    key={row.feature}
+                    className={`border-b border-[var(--border)] last:border-b-0 ${
+                      i % 2 === 0 ? "" : "bg-[var(--muted)]/20"
+                    }`}
+                  >
+                    <td className="px-6 py-3 font-medium text-[var(--foreground)]">
+                      {row.feature}
+                    </td>
+                    <td className="px-4 py-3 text-center text-[var(--muted-foreground)]">
+                      {row.free}
+                    </td>
+                    <td className="px-4 py-3 text-center text-[var(--foreground)]">
+                      {row.pro}
+                    </td>
+                    <td className="px-4 py-3 text-center text-[var(--foreground)]">
+                      {row.lifetime}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -258,6 +253,26 @@ export default function PricingContent() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="rounded-2xl border border-[var(--color-primary)]/20 bg-gradient-to-br from-[var(--color-primary)]/5 to-[var(--color-accent)]/5 p-10">
+            <h2 className="mb-3 text-2xl font-bold text-[var(--foreground)]">
+              Start Your Journey Today
+            </h2>
+            <p className="mb-6 text-[var(--muted-foreground)]">
+              Explore 3,000 years of Eastern wisdom — completely free to start.
+            </p>
+            <Link
+              href="/iching"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-8 py-3 font-semibold text-white transition-colors hover:bg-[var(--color-primary-dark)]"
+            >
+              Try I Ching Divination →
+            </Link>
           </div>
         </div>
       </section>

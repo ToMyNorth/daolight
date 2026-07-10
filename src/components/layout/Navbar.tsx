@@ -7,7 +7,11 @@ import { CircleDot, Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/siteConfig";
 import { cn } from "@/lib/utils";
 
-const allLinks = [...navLinks, { href: "/blog", label: "Blog" }];
+const allLinks = [
+  ...navLinks,
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
